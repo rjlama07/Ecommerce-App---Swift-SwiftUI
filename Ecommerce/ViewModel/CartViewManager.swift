@@ -33,7 +33,7 @@ class CartViewManager {
             let cartItem = CartItems(quantity: 1, product: product)
             myCartItems.append(cartItem)
         }
-      showAlert = true
+ 
         
     }
     

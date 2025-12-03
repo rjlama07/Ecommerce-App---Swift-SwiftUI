@@ -29,6 +29,7 @@ struct ProductDetailView: View {
                 Spacer()
                 Button{
                     cartManager.addTOCart(product)
+                    cartManager.showAlert = true;
                 }label: {
                     Text("Add To Cart")
                 }

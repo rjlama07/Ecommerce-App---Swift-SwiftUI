@@ -25,7 +25,7 @@ struct CartView: View {
                                         .lineLimit(2)
                                         .font(.system(size: 14))
                                     Stepper("Quantity \(cartItem.quantity)") {
-                                        
+                                        cartManager.addTOCart(cartItem.product)
                                     } onDecrement: {
                                         cartManager.onDecrement(cartItem.product)
                                         
