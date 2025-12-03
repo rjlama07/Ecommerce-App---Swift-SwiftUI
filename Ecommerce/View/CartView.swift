@@ -37,6 +37,19 @@ struct CartView: View {
                         
                     }
                 }
+                
+                VStack{
+                    Divider()
+                    HStack{
+                        Text("Total:")
+                            .font(.system(size: 16))
+                        Spacer()
+                        Text(cartManager.displayTotalPrice)
+                            .font(.system(size: 18,weight: .bold))
+                    }
+                    .padding(.horizontal,16)
+                    .padding(.vertical, 30)
+                }
         }
     }
 }

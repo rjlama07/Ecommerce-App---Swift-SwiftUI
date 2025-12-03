@@ -20,6 +20,14 @@ class CartViewManager {
         }
     }
     var showAlert: Bool = false
+    var displayTotalPrice: String {
+        let totalPrice =  myCartItems.reduce(0.00) { partialResult, item in
+            return partialResult + (Double(item.product.price) * Double(item.quantity))
+        }
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        return formatter.string(from: totalPrice as NSNumber) ?? "$0.00"
+    }
     
     
     func addTOCart(_ product: Product) {
