@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @State var homeViewModel: HomeViewModal = HomeViewModal()
     @Environment(CartViewManager.self) var cartManager
+    @Environment(TagManager.self) var tagManager
 
     fileprivate var NavigationBarView: some View {
         ZStack {
@@ -18,14 +19,19 @@ struct HomeView: View {
             
             HStack {
                 Spacer()
-                ZStack {
-                    Image(systemName: "cart.fill")
+                Button {
+                    tagManager.updateSelectedTag(.cart)
+                } label: {
                     ZStack {
-                        Circle().frame(height: 20)
-                        Text("\(cartManager.totalItem)").foregroundStyle(.white).font(.system(size: 14))
-                        
-                    }.offset(CGSize(width: 10, height: -10))
+                        Image(systemName: "cart.fill")
+                        ZStack {
+                            Circle().frame(height: 20)
+                            Text("\(cartManager.totalItem)").foregroundStyle(.white).font(.system(size: 14))
+                            
+                        }.offset(CGSize(width: 10, height: -10))
+                    }
                 }
+
             }
         }
         .padding(.horizontal, 16)

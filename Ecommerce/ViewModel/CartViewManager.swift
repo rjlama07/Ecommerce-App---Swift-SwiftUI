@@ -15,7 +15,9 @@ import Foundation
 class CartViewManager {
     var myCartItems: [CartItems] = []
     var totalItem: Int {
-        myCartItems.count
+        myCartItems.reduce(0) { partialResult, cartItem in
+            partialResult + cartItem.quantity
+        }
     }
     var showAlert: Bool = false
     
