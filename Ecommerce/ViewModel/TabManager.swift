@@ -10,8 +10,8 @@
 import Foundation
 
 enum TabType: Int {
-    case home = 0
-    case cart = 1
+    case home = 1
+    case cart = 2
     case favourite = 3
 }
 

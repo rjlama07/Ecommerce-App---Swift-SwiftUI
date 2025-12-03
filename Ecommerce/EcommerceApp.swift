@@ -12,7 +12,7 @@ struct EcommerceApp: App {
     @State var tagManager = TagManager()
     var body: some Scene {
         WindowGroup {
-            TabView {
+            TabView(selection: $tagManager.selectedTag) {
                 HomeView()
                     .tabItem{
                         Image(systemName: "house.fill")
@@ -25,13 +25,13 @@ struct EcommerceApp: App {
                         Image(systemName: "cart.fill")
                         Text("Cart")
                     }
-                    .tag(1)
+                    .tag(2)
                 FavouriteView()
                     .tabItem{
                         Image(systemName: "heart.fill")
                         Text("Favourites")
                     }
-                    .tag(2)
+                    .tag(3)
                 
                 
                 
